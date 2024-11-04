@@ -192,7 +192,7 @@ const ItemForm = () => {
         if (id) {
             const fetchItem = async () => {
                 try {
-                    const response = await axios.get(`http://localhost:5000/api/items/name/${id}`);
+                    const response = await axios.get(`https://lottter-back.onrender.com/api/items/${id}`);
                     setFormData({
                         number: response.data.number,
                         itemName: response.data.itemName,
@@ -240,7 +240,7 @@ const ItemForm = () => {
 
     const addItem = async () => {
         try {
-            await axios.post('http://localhost:5000/api/items', formData);
+            await axios.post('https://lottter-back.onrender.com/api/items/', formData);
             setMessage('Item added successfully');
             setFormData({ number: '', itemName: '', image: '' });
           
@@ -251,7 +251,7 @@ const ItemForm = () => {
 
     const updateItem = async () => {
         try {
-            await axios.put(`http://localhost:5000/api/items/${editId}`, formData);
+            await axios.put(`https://lottter-back.onrender.com/api/items/${editId}`, formData);
             setMessage('Item updated successfully');
             setFormData({ number: '', itemName: '', image: '' });
             setEditId(null);
@@ -275,7 +275,7 @@ const ItemForm = () => {
     const handleDelete = async () => {
         if (editId) {
             try {
-                await axios.delete(`http://localhost:5000/api/items/${editId}`);
+                await axios.delete(`https://lottter-back.onrender.com/api/items/${editId}`);
                 setMessage('Item deleted successfully');
                 setFormData({ number: '', itemName: '', image: '' });
                 setEditId(null);

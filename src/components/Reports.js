@@ -7,7 +7,7 @@ function Reports() {
 
     // Fetch winner data from the API
     const handleGetWinner = () => {
-        axios.get("http://localhost:5000/api/items")
+        axios.get("https://lottter-back.onrender.com/api/items")
             .then((res) => {
                 const data = res.data.map(winner => ({
                     ...winner,
@@ -22,7 +22,7 @@ function Reports() {
 
     // Fetch user data from the API
     const handleGetUsers = () => {
-        axios.get("http://localhost:5000/api/users")
+        axios.get("https://lottter-back.onrender.com/api/items")
             .then((res) => {
                 setUsers(res.data);
             })

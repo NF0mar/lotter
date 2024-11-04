@@ -15,7 +15,7 @@ function HeroSection() {
             setSelectedNumbers((prev) => [...prev, number]); // Add the clicked number
 
             // Fetch item data based on the clicked number
-            const response = await axios.get(`http://localhost:5000/api/items/name/${number}`);
+            const response = await axios.get(`https://lottter-back.onrender.com/api/items/name/${number}`);
             console.log("Response from server:", response);
 
             const { itemName, image } = response.data || {};

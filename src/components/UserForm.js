@@ -48,7 +48,7 @@ const UserForm = () => {
         if (!validate()) return;
 
         try {
-            await axios.post('http://localhost:5000/api/users', formData);
+            await axios.post('https://lottter-back.onrender.com/api/users', formData);
             setMessage('User added successfully');
             setFormData({ name: '', phone: '', email: '' });
         } catch (error) {
@@ -61,7 +61,7 @@ const UserForm = () => {
         if (!validate()) return;
 
         try {
-            await axios.put(`http://localhost:5000/api/users/${editId}`, formData);
+            await axios.put(`https://lottter-back.onrender.com/api/users/${editId}`, formData);
             setMessage('User updated successfully');
             setFormData({ name: '', phone: '', email: '' });
             setEditId(null);
@@ -73,7 +73,7 @@ const UserForm = () => {
     const handleDelete = async () => {
         if (editId) {
             try {
-                await axios.delete(`http://localhost:5000/api/users/${editId}`);
+                await axios.delete(`https://lottter-back.onrender.com/api/users/${editId}`);
                 setMessage('User deleted successfully');
                 setFormData({ name: '', phone: '', email: '' });
                 setEditId(null);
